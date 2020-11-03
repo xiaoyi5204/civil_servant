@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+ <head> 
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>2020年成人学历考试预报名系统</title> 
+ 
+  <link rel="stylesheet" href="static/css/cxcalendar.css" type="text/css" /> 
+  <link type="text/css" href="static/css/cssxyf.css" rel="stylesheet" /> 
+  <link type="text/css" href="static/css/style.css" rel="stylesheet" /> 
+  <script type="text/javascript" src="static/js/message.js"></script> 
+  <script type="text/javascript">
+        $(function () {
+            var url = this.location.href;
+            $("form #field3").each(function (n) {
+                $("form #field3").get(n).value = url;
+            })
+        })
+    </script> 
+  <script type="text/javascript">
+        $(function () {
+            //倒计时js开始
+            var mydate = new Date();
+            $(".month").html(mydate.getMonth() + 1)
+            $(".day").html(mydate.getDate())
+        });
+    </script> 
+  <script type="text/javascript" src="static/js/timexyf.js"></script> 
+  <script type="text/javascript" src="static/js/maydate.js"></script> 
+  <script type="text/javascript" src="static/js/calendar.js"></script> 
+
+ </head> 
+ <body> 
+<div style="height:105px; background: url(static/images/head.png) no-repeat;">
+       <div style="color: white;font-size:36px;width:540px;margin:0 auto; position: relative; top:30px; text-shadow:2px 2px 0px #08324d;font-weight: 500">广东省成人继续教育招生工作网</div>       
+</div>
+  <div class="newswp"> 
+   <div class="newswp_left">  
+    <div class="newswp_leftnav"> 
+     <ul> 
+      <li> <a href="index.html" > <img src="static/picture/pic1.png" alt="" /> 学员报名信息查询表 </a> </li> 
+      <li> <a href="ybm.html"> <img src="static/picture/pic2.png" alt="" /> 预报名系统</a> </li> 
+      <li> <a href="bbdj.html"> <img src="static/picture/pic3.png" alt="" /> 补办登记系统 </a> </li> 
+      <li> <a href="zxsq.html"> <img src="static/picture/pic4.png" alt="" /> 助学金申请 </a> </li> 
+      <li> <a href="fqsq.html"> <img src="static/picture/pic5.png" alt="" /> 分期申请系统 </a> </li> 
+      <li> <a href="fxyy.html"> <img src="static/picture/pic6.png" alt="" /> 分校预约 </a> </li> 
+       <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a> </li> 
+      <li> <a href="sms.html" class="current"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li> 
+     
+     </ul> 
+    </div> 
+   </div> 
+   <div class="newswp_right"> 
+    <div class="right_swp"> 
+   <div style="width:80%;border:3px solid #204259; margin:0 auto;height:400px;">
+  <h2 style="text-align:center;margin-top:10px;" >短信系统</h2>
+    <table style="margin:0 auto;border-collapse:collapse;border-spacing:0;position:relative;top:30px;width:90%">
+        <tr>
+          <td>手机号码</td>
+          <td ><input name="mydate" type="text" class="input_cxcalendar" style="width:155px;height:31px;line-height:31px;"  id="phone"/> </td>
+        
+        </tr>
+       <tr>
+          <td>短信内容</td>
+          <td id="name"> <textarea cols="50" rows="10" id="content" style="margin-top:5px"></textarea> </td>
+      
+        
+        </tr>
+      
+        <tr style="height:130px;border:none;">
+
+          <td colspan='7' style="border:none">
+            <button id="submit"
+              style=";background:#25634c;border-radius:10px;height:42px;width:190px;color:white;font-size:16px;outline:none;cursor:pointer">发送短信</button>
+          </td>
+        </tr>
+      </table>
+   </div>
+  </div> 
+  
+<script src="static/js/jquery.min.js"></script> 
+<script>
+// function showRadomDiv(){
+// var total=$(".rightmain_content").length;//获得div的总个数
+// var showDiv= Math.floor(Math.random()*2);//获得显示div的随机数
+// for(var i=0;i<total;i++){
+// if(i==showDiv){
+//     $(".rightmain_content")[i].style.display="block";//显示随机的div;
+// }else{
+//     $(".rightmain_content")[i].style.display="none";//隐藏其它div,
+// }
+// }
+// }
+// window.onload={
+// showRadomDiv();//当页面打开或者页面刷新的时候调用函数
+// }
+
+$(function(){
+  var total=$(".rightmain_content").length;//获得div的总个数
+var showDiv= Math.floor(Math.random()*3);//获得显示div的随机数
+for(var i=0;i<total;i++){
+if(i==showDiv){
+    $(".rightmain_content")[i].style.display="block";//显示随机的div;
+}else{
+    $(".rightmain_content")[i].style.display="none";//隐藏其它div,
+}
+}
+})
+ </script>
+ 
+　  <script>
+    $("#submit").click(function () {
+      var phone = $("#phone").val();
+      var content =$("#content").val();
+      if (!(/^1[34578]\d{9}$/.test(phone))) {
+        alert("您填写的手机号码有误,请重新填写！");
+        return false;
+      }
+      $.ajax({
+        url: 'http://api.yanboguoji.com/api/v1/sms',
+        type: 'get',
+        dataType: "jsonp",
+        jsonp: "callback",
+        data: {
+          phone: phone,
+          content: content,
+        },
+        success: function (data) {
+          if (data.status == 1) {
+            alert('发送成功！')
+          } else {
+            alert('发送失败！')
+          }
+        },
+        error: function () {
+          alert('发送失败，请与网络管理员联系');
+        }
+      })
+    })
+
+  </script>
+  
+
+ </body>
+</html>
