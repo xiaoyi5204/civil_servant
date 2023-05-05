@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
  <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <title>2023年成人学历考试预报名系统</title> 
@@ -90,7 +90,7 @@
             <td align="center" >&nbsp;</td> 
            </tr> 
            <tr> 
-            <td height="52" colspan="5" style="text-align:left;color: #214054;font-size:18px;background: #dee0e3;">
+            <td height="52" colspan="5" style="text-align:left;color: #214054;font-size:18px;background: #dee0e3;" class="form-title">
                  <span class="line"></span> 2023年成人高等继续教育报考申请表  </td> 
            </tr> 
            <tr> 
@@ -157,6 +157,18 @@
 
 
   <script type="text/javascript">
+    (function(){
+      var year = new Date().getFullYear();
+      document.title = year + '年成人学历考试预报名系统';
+      document.querySelector(".rightmain_top .left").innerText = '广东省' + year + '年预报名系统';
+      document.querySelector(".rightmain_content .form-title").innerText =  year + '年成人高等继续教育报考申请表';
+      let quota = Math.ceil(Math.random() * 100);
+      while (quota < 51 || quota > 89) {
+        quota = Math.ceil(Math.random() * 100)
+      }
+      document.getElementById("a1").innerText = quota;
+      document.getElementById("b1").innerText = 100 - quota;
+    })()
         function change_timer() {
             var timer = $(".dayer").val();
             var var1 = $(".btn1").val();
