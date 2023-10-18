@@ -1,512 +1,545 @@
 ﻿<!DOCTYPE html>
- <head> 
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-  <title>2020年成人学历考试预报名系统</title> 
- 
-  <link rel="stylesheet" href="static/css/cxcalendar.css" type="text/css" /> 
-  <link type="text/css" href="static/css/cssxyf.css" rel="stylesheet" /> 
-  <link type="text/css" href="static/css/style.css" rel="stylesheet" /> 
-  <script type="text/javascript" src="static/js/message.js"></script> 
-  <script type="text/javascript">
-        $(function () {
-            var url = this.location.href;
-            $("form #field3").each(function (n) {
-                $("form #field3").get(n).value = url;
-            })
-        })
-    </script> 
-  <script type="text/javascript">
-        $(function () {
-            //倒计时js开始
-            var mydate = new Date();
-            $(".month").html(mydate.getMonth() + 1)
-            $(".day").html(mydate.getDate())
-        });
-    </script> 
-  <script type="text/javascript" src="static/js/timexyf.js"></script> 
-  <script type="text/javascript" src="static/js/maydate.js"></script> 
-  <script type="text/javascript" src="static/js/calendar.js"></script> 
+<head>
 
- </head> 
- <body> 
-<div style="height:105px; background: url(static/images/head.png) no-repeat;width: 100%;background-color: #15384d;">
-       <div style="color: white;font-size:36px;width:540px;margin:0 auto; position: relative; top:30px; text-shadow:2px 2px 0px #08324d;font-weight: 500">广东省成人继续教育招生工作网</div>       
-</div>
-  <div class="newswp"> 
-   <div class="newswp_left">  
-    <div class="newswp_leftnav"> 
-     <ul> 
-      <li> <a href="index.html" class="current"> <img src="static/picture/pic1.png" alt="" /> 学员报名信息查询表 </a> </li> 
-      <li> <a href="ybm.html"> <img src="static/picture/pic2.png" alt="" /> 预报名系统</a> </li> 
-      <li> <a href="bbdj.html"> <img src="static/picture/pic3.png" alt="" /> 补办登记系统 </a> </li> 
-      <li> <a href="zxsq.html"> <img src="static/picture/pic4.png" alt="" /> 助学金申请 </a> </li> 
-      <li> <a href="fqsq.html"> <img src="static/picture/pic5.png" alt="" /> 分期申请系统 </a> </li> 
-      <li> <a href="fxyy.html"> <img src="static/picture/pic6.png" alt="" /> 分校预约 </a> </li> 
-       <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a> </li> 
-      <li> <a href="sms.html"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="newswp_right"> 
-    <div class="right_swp"> 
-     <div class="rightmain_top"> 
-      <ul> 
-       <li class="left">*您的当前位置在：报名管理系统>>考生报名信息查看</li> 
-       <li class="right"></li> 
-      </ul> 
-     </div> 
-     <div class="rightmain_content"> 
-      <div class="content"> 
-       <div class="content_nav"> 
-       考生标签
-       </div> 
-       <div class="main"> 
-            <table>    
-               <tr>
-                    <td class="main-title" style="letter-spacing:8px;">类别</td>
-                    <td class="main-centent">成考</td>
-                    <td class="main-title" style="letter-spacing:8px;">科类</td>
-                    <td class="main-centent">专科-文科</td>
-                    </tr>    
-               <tr>
-                            <td class="main-title" style="letter-spacing:8px;">州市</td>
-                            <td class="main-centent">佛山市</td>
-                            <td class="main-title" style="letter-spacing:8px;">县区</td>
-                            <td class="main-centent">南海区</td>
-                 </tr>  
-                     <tr>
-                                    <td class="main-title"style="letter-spacing:8px;" >确认点</td>
-                                    <td class="main-centent">南海区直属</td>
-                                    <td class="main-title" style="letter-spacing:8px;">用户名</td>
-                                    <td class="main-centent">ydxsj0600</td>
-                             </tr> 
-                             <tr>
-                                    <td class="main-title" style="letter-spacing:8px;">姓名</td>
-                                    <td class="main-centent">陈红刚</td>
-                                    <td class="main-title" style="letter-spacing:0.1rem;">报名确认状态</td>
-                                    <td class="main-centent">已确认</td>
-                             </tr>    
-                      
-                    </table>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <title>明德公考招生工作网</title>
+
+       <link rel="stylesheet" href="static/css/cxcalendar.css" type="text/css" />
+       <link type="text/css" href="static/css/cssxyf.css" rel="stylesheet" />
+       <link type="text/css" href="static/css/style.css" rel="stylesheet" />
+       <script type="text/javascript" src="static/js/message.js"></script>
+       <script type="text/javascript">
+              $(function () {
+                     var url = this.location.href;
+                     $("form #field3").each(function (n) {
+                            $("form #field3").get(n).value = url;
+                     })
+              })
+       </script>
+       <script type="text/javascript">
+              $(function () {
+                     //倒计时js开始
+                     var mydate = new Date();
+                     $(".month").html(mydate.getMonth() + 1)
+                     $(".day").html(mydate.getDate())
+              });
+       </script>
+       <script type="text/javascript" src="static/js/timexyf.js"></script>
+       <script type="text/javascript" src="static/js/maydate.js"></script>
+       <script type="text/javascript" src="static/js/calendar.js"></script>
+
+</head>
+
+<body>
+       <div
+              style="height:105px; background: url(static/images/head.png) no-repeat;width: 100%;background-color: #15384d;">
+              <div
+                     style="color: white;font-size:36px;width:540px;margin:0 auto; position: relative; top:30px; text-shadow:2px 2px 0px #08324d;font-weight: 500;text-align: center;">
+                     明德公考招生工作网</div>
        </div>
-      </div> 
-      <div class="content" style="margin-top:25px;height:320px;">  
-            <div class="content_nav"> 
-            考生报名信息
-            </div> 
-            <div class="main"> 
-                <table>    
-                         <tr>
-                         <td class="main-title" >性别</td>
-                         <td class="main-centent">男</td>
-                         <td class="main-title" >外语语种</td>
-                         <td class="main-centent">英语</td>
-                         </tr>    
-                         <tr>
-                                 <td class="main-title" >证件类型</td>
-                                 <td class="main-centent">身份证</td>
-                                 <td class="main-title" >证件号</td>
-                                 <td class="main-centent">440605199605085850</td>
-                                 </tr>  
-                                 <tr>
-                                         <td class="main-title">出生时间</td>
-                                         <td class="main-centent">1996-05-08</td>
-                                         <td class="main-title" >政治面貌</td>
-                                         <td class="main-centent">团员</td>
-                                  </tr> 
-                                  <tr>
-                                         <td class="main-title" >报考院校</td>
-                                         <td class="main-centent">华南理工大学</td>
-                                         <td class="main-title">民族</td>
-                                         <td class="main-centent">汉族</td>
-                                  </tr>    
-                                  <tr>
-                                        <td class="main-title" >专业</td>
-                                        <td class="main-centent">行政管理</td>
-                                        <td class="main-title">职业类别</td>
-                                        <td class="main-centent">其它</td>
-                                 </tr>  
-                                 <tr>
-                                        <td class="main-title" >确认时间</td>
-                                        <td class="main-centent">2020-11-03</td>
-                                        <td class="main-title">高中毕业证</td>
-                                        <td class="main-centent">无</td>
-                                 </tr>  
-                                 <tr>
-                                        <td class="main-title" >确认者</td>
-                                        <td class="main-centent">陈红刚</td>
-                                        <td class="main-title">学习形式</td>
-                                        <td class="main-centent">成人高考</td>
-                                 </tr>   
-              </table>
-            </div>
-     </div> 
-     <div class="content" style="margin-top:30px; height:250px;"> 
-        
-            <div class="content_nav"> 
-            志愿选择
-            </div> 
-            <div class="main bottom"> 
-                 <table>    
-                         <tr>
-                         <td>考生姓名</td>
-                         <td>层次</td>
-                         <td>科类</td>
-                         <td>院校</td>
-                         <td>专业</td>
-                         <td>学习形式</td>
-                         </tr>    
-                         <tr>
-                                <td>赵凯</td>
-                                <td>高中</td>
-                                <td>本科--理科</td>
-                                <td>华南理工大学</td>
-                                <td>行政管理</td>
-                                <td>自考</td>
-                        </tr> 
-                        <tr>
-                                <td>李力</td>
-                                <td>高中</td>
-                                <td>专科--文科</td>
-                                <td>暨南大学</td>
-                                <td>汉语言大学</td>
-                                <td>函授</td>
-                        </tr> 
-                        <tr>
-                                <td>艾斯</td>
-                                <td>高中</td>
-                                <td>本科--文科</td>
-                                <td>华南师范大学</td>
-                                <td>汉语言文学</td>
-                                <td>自考</td>
-                        </tr> 
-                        <tr>
-                                <td>周永发</td>
-                                <td>高中</td>
-                                <td>本科--理科</td>
-                                <td>华南理工大学</td>
-                                <td>工商企业管理</td>
-                                <td>函授</td>
-                        </tr> 
-                         </table>
-            </div>
-           </div> 
+       <div class="newswp">
+              <div class="newswp_left">
+                     <div class="newswp_leftnav">
+                            <ul>
+                                   <li> <a href="index.html" class="current"> <img src="static/picture/pic1.png"
+                                                        alt="" /> 学员报名信息查询表 </a> </li>
+                                   <li> <a href="ybm.html"> <img src="static/picture/pic2.png" alt="" /> 预报名系统</a> </li>
+                                   <li> <a href="bbdj.html"> <img src="static/picture/pic3.png" alt="" /> 补办登记系统 </a>
+                                   </li>
+                                   <li> <a href="zxsq.html"> <img src="static/picture/pic4.png" alt="" /> 助学金申请 </a>
+                                   </li>
+                                   <li> <a href="fqsq.html"> <img src="static/picture/pic5.png" alt="" /> 分期申请系统 </a>
+                                   </li>
+                                   <li> <a href="fxyy.html"> <img src="static/picture/pic6.png" alt="" /> 分校预约 </a>
+                                   </li>
+                                   <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a>
+                                   </li>
+                                   <li> <a href="sms.html"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li>
+                            </ul>
+                     </div>
+              </div>
+              <div class="newswp_right">
+                     <div class="right_swp">
+                            <div class="rightmain_top">
+                                   <ul>
+                                          <li class="left">*您的当前位置在：报名管理系统>>考生报名信息查看</li>
+                                          <li class="right"></li>
+                                   </ul>
+                            </div>
+                            <div class="rightmain_content">
+                                   <div class="content">
+                                          <div class="content_nav">
+                                                 考生标签
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">类别
+                                                               </td>
+                                                               <td class="main-centent">成考</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">科类
+                                                               </td>
+                                                               <td class="main-centent">专科-文科</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">州市
+                                                               </td>
+                                                               <td class="main-centent">佛山市</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">县区
+                                                               </td>
+                                                               <td class="main-centent">南海区</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">确认点
+                                                               </td>
+                                                               <td class="main-centent">南海区直属</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">用户名
+                                                               </td>
+                                                               <td class="main-centent">ydxsj0600</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">姓名
+                                                               </td>
+                                                               <td class="main-centent">陈红刚</td>
+                                                               <td class="main-title" style="letter-spacing:0.1rem;">
+                                                                      报名确认状态</td>
+                                                               <td class="main-centent">已确认</td>
+                                                        </tr>
 
-     </div> 
-     <div class="rightmain_content"> 
-        <div class="content"> 
-         <div class="content_nav"> 
-         考生标签
-         </div> 
-         <div class="main"> 
-              <table>    
-                 <tr>
-                      <td class="main-title" style="letter-spacing:8px;">类别</td>
-                      <td class="main-centent">成考</td>
-                      <td class="main-title" style="letter-spacing:8px;">科类</td>
-                      <td class="main-centent">本科-理科</td>
-                      </tr>    
-                 <tr>
-                              <td class="main-title" style="letter-spacing:8px;">州市</td>
-                              <td class="main-centent">茂名市</td>
-                              <td class="main-title" style="letter-spacing:8px;">县区</td>
-                              <td class="main-centent">信宜市</td>
-                   </tr>  
-                       <tr>
-                                      <td class="main-title"style="letter-spacing:8px;" >确认点</td>
-                                      <td class="main-centent">信宜市直属</td>
-                                      <td class="main-title" style="letter-spacing:8px;">用户名</td>
-                                      <td class="main-centent">ydxsj0197</td>
-                               </tr> 
-                               <tr>
-                                      <td class="main-title" style="letter-spacing:8px;">姓名</td>
-                                      <td class="main-centent">李洪邦</td>
-                                      <td class="main-title" style="letter-spacing:0.1rem;">报名确认状态</td>
-                                      <td class="main-centent">已确认</td>
-                               </tr>    
-                        
-                      </table>
-         </div>
-        </div> 
-        <div class="content" style="margin-top:25px;height:320px;">  
-              <div class="content_nav"> 
-              考生报名信息
-              </div> 
-              <div class="main"> 
-                  <table>    
-                           <tr>
-                           <td class="main-title" >性别</td>
-                           <td class="main-centent">男</td>
-                           <td class="main-title" >外语语种</td>
-                           <td class="main-centent">英语</td>
-                           </tr>    
-                           <tr>
-                                   <td class="main-title" >证件类型</td>
-                                   <td class="main-centent">身份证</td>
-                                   <td class="main-title" >证件号</td>
-                                   <td class="main-centent">440983199812100711
-                                   </td>
-                                   </tr>  
-                                   <tr>
-                                           <td class="main-title">出生时间</td>
-                                           <td class="main-centent">1998-12-10</td>
-                                           <td class="main-title" >政治面貌</td>
-                                           <td class="main-centent">团员</td>
-                                    </tr> 
-                                    <tr>
-                                           <td class="main-title" >报考院校</td>
-                                           <td class="main-centent">华南理工大学</td>
-                                           <td class="main-title">民族</td>
-                                           <td class="main-centent">汉族</td>
-                                    </tr>    
-                                    <tr>
-                                          <td class="main-title" >专业</td>
-                                          <td class="main-centent">工商企业管理</td>
-                                          <td class="main-title">职业类别</td>
-                                          <td class="main-centent">其它</td>
-                                   </tr>  
-                                   <tr>
-                                          <td class="main-title" >确认时间</td>
-                                          <td class="main-centent">2020-10-03</td>
-                                          <td class="main-title">高中毕业证</td>
-                                          <td class="main-centent">无</td>
-                                   </tr>  
-                                   <tr>
-                                          <td class="main-title" >确认者</td>
-                                          <td class="main-centent">李洪邦</td>
-                                          <td class="main-title">学习形式</td>
-                                          <td class="main-centent">成人高考</td>
-                                   </tr>   
-                </table>
-              </div>
-       </div> 
-       <div class="content" style="margin-top:30px; height:250px;"> 
-          
-              <div class="content_nav"> 
-              志愿选择
-              </div> 
-              <div class="main bottom"> 
-                   <table>    
-                           <tr>
-                           <td>考生姓名</td>
-                           <td>层次</td>
-                           <td>科类</td>
-                           <td>院校</td>
-                           <td>专业</td>
-                           <td>学习形式</td>
-                           </tr>    
-                           <tr>
-                                  <td>赵凯</td>
-                                  <td>高中</td>
-                                  <td>本科--理科</td>
-                                  <td>暨南大学</td>
-                                  <td>行政管理</td>
-                                  <td>自考</td>
-                          </tr> 
-                          <tr>
-                                  <td>李力</td>
-                                  <td>高中</td>
-                                  <td>专科--文科</td>
-                                  <td>华南师范大学</td>
-                                  <td>汉语言大学</td>
-                                  <td>函授</td>
-                          </tr> 
-                          <tr>
-                                  <td>艾斯</td>
-                                  <td>高中</td>
-                                  <td>本科--文科</td>
-                                  <td>华南师范大学</td>
-                                  <td>汉语言文学</td>
-                                  <td>自考</td>
-                          </tr> 
-                          <tr>
-                                  <td>周永发</td>
-                                  <td>高中</td>
-                                  <td>本科--理科</td>
-                                  <td>暨南大学</td>
-                                  <td>工商企业管理</td>
-                                  <td>函授</td>
-                          </tr> 
-                           </table>
-              </div>
-             </div> 
-  
-       </div> 
-       <div class="rightmain_content"> 
-        <div class="content"> 
-         <div class="content_nav"> 
-         考生标签
-         </div> 
-         <div class="main"> 
-              <table>    
-                 <tr>
-                      <td class="main-title" style="letter-spacing:8px;">类别</td>
-                      <td class="main-centent">成考</td>
-                      <td class="main-title" style="letter-spacing:8px;">科类</td>
-                      <td class="main-centent">专科-文科</td>
-                      </tr>    
-                 <tr>
-                              <td class="main-title" style="letter-spacing:8px;">州市</td>
-                              <td class="main-centent">珠海市</td>
-                              <td class="main-title" style="letter-spacing:8px;">县区</td>
-                              <td class="main-centent">金湾区</td>
-                   </tr>  
-                       <tr>
-                                      <td class="main-title"style="letter-spacing:8px;" >确认点</td>
-                                      <td class="main-centent">金湾区直属</td>
-                                      <td class="main-title" style="letter-spacing:8px;">用户名</td>
-                                      <td class="main-centent">ydxsj1509</td>
-                               </tr> 
-                               <tr>
-                                      <td class="main-title" style="letter-spacing:8px;">姓名</td>
-                                      <td class="main-centent">叶力玮</td>
-                                      <td class="main-title" style="letter-spacing:0.1rem;">报名确认状态</td>
-                                      <td class="main-centent">已确认</td>
-                               </tr>    
-                        
-                      </table>
-         </div>
-        </div> 
-        <div class="content" style="margin-top:25px;height:320px;">  
-              <div class="content_nav"> 
-              考生报名信息
-              </div> 
-              <div class="main"> 
-                  <table>    
-                           <tr>
-                           <td class="main-title" >性别</td>
-                           <td class="main-centent">女</td>
-                           <td class="main-title" >外语语种</td>
-                           <td class="main-centent">英语</td>
-                           </tr>    
-                           <tr>
-                                   <td class="main-title" >证件类型</td>
-                                   <td class="main-centent">身份证</td>
-                                   <td class="main-title" >证件号</td>
-                                   <td class="main-centent">440404199406298100</td>
-                                   </tr>  
-                                   <tr>
-                                           <td class="main-title">出生时间</td>
-                                           <td class="main-centent">1994-06-29</td>
-                                           <td class="main-title" >政治面貌</td>
-                                           <td class="main-centent">团员</td>
-                                    </tr> 
-                                    <tr>
-                                           <td class="main-title" >报考院校</td>
-                                           <td class="main-centent">华南师范大学</td>
-                                           <td class="main-title">民族</td>
-                                           <td class="main-centent">汉族</td>
-                                    </tr>    
-                                    <tr>
-                                          <td class="main-title" >专业</td>
-                                          <td class="main-centent">汉语言文学</td>
-                                          <td class="main-title">职业类别</td>
-                                          <td class="main-centent">其它</td>
-                                   </tr>  
-                                   <tr>
-                                          <td class="main-title" >确认时间</td>
-                                          <td class="main-centent">2020-11-03</td>
-                                          <td class="main-title">高中毕业证</td>
-                                          <td class="main-centent">无</td>
-                                   </tr>  
-                                   <tr>
-                                          <td class="main-title" >确认者</td>
-                                          <td class="main-centent">叶力玮</td>
-                                          <td class="main-title">学习形式</td>
-                                          <td class="main-centent">成人高考</td>
-                                   </tr>   
-                </table>
-              </div>
-       </div> 
-       <div class="content" style="margin-top:30px; height:250px;"> 
-          
-              <div class="content_nav"> 
-              志愿选择
-              </div> 
-              <div class="main bottom"> 
-                   <table>    
-                           <tr>
-                           <td>考生姓名</td>
-                           <td>层次</td>
-                           <td>科类</td>
-                           <td>院校</td>
-                           <td>专业</td>
-                           <td>学习形式</td>
-                           </tr>    
-                           <tr>
-                                  <td>赵凯</td>
-                                  <td>高中</td>
-                                  <td>本科--理科</td>
-                                  <td>暨南大学</td>
-                                  <td>行政管理</td>
-                                  <td>自考</td>
-                          </tr> 
-                          <tr>
-                                  <td>李力</td>
-                                  <td>高中</td>
-                                  <td>专科--文科</td>
-                                  <td>华南师范大学</td>
-                                  <td>汉语言大学</td>
-                                  <td>函授</td>
-                          </tr> 
-                          <tr>
-                                  <td>艾斯</td>
-                                  <td>高中</td>
-                                  <td>本科--文科</td>
-                                  <td>华南理工大学</td>
-                                  <td>汉语言文学</td>
-                                  <td>自考</td>
-                          </tr> 
-                          <tr>
-                                  <td>周永发</td>
-                                  <td>高中</td>
-                                  <td>本科--理科</td>
-                                  <td>广东工业大学</td>
-                                  <td>工商企业管理</td>
-                                  <td>函授</td>
-                          </tr> 
-                           </table>
-              </div>
-             </div> 
-  
-       </div> 
-    </div> 
-   </div> 
-  </div> 
-  
-<script src="static/js/jquery.min.js"></script> 
-<script>
-// function showRadomDiv(){
-// var total=$(".rightmain_content").length;//获得div的总个数
-// var showDiv= Math.floor(Math.random()*2);//获得显示div的随机数
-// for(var i=0;i<total;i++){
-// if(i==showDiv){
-//     $(".rightmain_content")[i].style.display="block";//显示随机的div;
-// }else{
-//     $(".rightmain_content")[i].style.display="none";//隐藏其它div,
-// }
-// }
-// }
-// window.onload={
-// showRadomDiv();//当页面打开或者页面刷新的时候调用函数
-// }
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:25px;height:320px;">
+                                          <div class="content_nav">
+                                                 考生报名信息
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title">性别</td>
+                                                               <td class="main-centent">男</td>
+                                                               <td class="main-title">外语语种</td>
+                                                               <td class="main-centent">英语</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">证件类型</td>
+                                                               <td class="main-centent">身份证</td>
+                                                               <td class="main-title">证件号</td>
+                                                               <td class="main-centent">440605199605085850</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">出生时间</td>
+                                                               <td class="main-centent">1996-05-08</td>
+                                                               <td class="main-title">政治面貌</td>
+                                                               <td class="main-centent">团员</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">报考院校</td>
+                                                               <td class="main-centent">华南理工大学</td>
+                                                               <td class="main-title">民族</td>
+                                                               <td class="main-centent">汉族</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">专业</td>
+                                                               <td class="main-centent">行政管理</td>
+                                                               <td class="main-title">职业类别</td>
+                                                               <td class="main-centent">其它</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认时间</td>
+                                                               <td class="main-centent">2020-11-03</td>
+                                                               <td class="main-title">高中毕业证</td>
+                                                               <td class="main-centent">无</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认者</td>
+                                                               <td class="main-centent">陈红刚</td>
+                                                               <td class="main-title">学习形式</td>
+                                                               <td class="main-centent">成人高考</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:30px; height:250px;">
 
-$(function(){
-  var total=$(".rightmain_content").length;//获得div的总个数
-var showDiv= Math.floor(Math.random()*3);//获得显示div的随机数
-for(var i=0;i<total;i++){
-if(i==showDiv){
-    $(".rightmain_content")[i].style.display="block";//显示随机的div;
-}else{
-    $(".rightmain_content")[i].style.display="none";//隐藏其它div,
-}
-}
-})
- </script>
- 
-　 
-  
+                                          <div class="content_nav">
+                                                 志愿选择
+                                          </div>
+                                          <div class="main bottom">
+                                                 <table>
+                                                        <tr>
+                                                               <td>考生姓名</td>
+                                                               <td>层次</td>
+                                                               <td>科类</td>
+                                                               <td>院校</td>
+                                                               <td>专业</td>
+                                                               <td>学习形式</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>赵凯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>华南理工大学</td>
+                                                               <td>行政管理</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>李力</td>
+                                                               <td>高中</td>
+                                                               <td>专科--文科</td>
+                                                               <td>暨南大学</td>
+                                                               <td>汉语言大学</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>艾斯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--文科</td>
+                                                               <td>华南师范大学</td>
+                                                               <td>汉语言文学</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>周永发</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>华南理工大学</td>
+                                                               <td>工商企业管理</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
 
- </body>
+                            </div>
+                            <div class="rightmain_content">
+                                   <div class="content">
+                                          <div class="content_nav">
+                                                 考生标签
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">类别
+                                                               </td>
+                                                               <td class="main-centent">成考</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">科类
+                                                               </td>
+                                                               <td class="main-centent">本科-理科</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">州市
+                                                               </td>
+                                                               <td class="main-centent">茂名市</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">县区
+                                                               </td>
+                                                               <td class="main-centent">信宜市</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">确认点
+                                                               </td>
+                                                               <td class="main-centent">信宜市直属</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">用户名
+                                                               </td>
+                                                               <td class="main-centent">ydxsj0197</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">姓名
+                                                               </td>
+                                                               <td class="main-centent">李洪邦</td>
+                                                               <td class="main-title" style="letter-spacing:0.1rem;">
+                                                                      报名确认状态</td>
+                                                               <td class="main-centent">已确认</td>
+                                                        </tr>
+
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:25px;height:320px;">
+                                          <div class="content_nav">
+                                                 考生报名信息
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title">性别</td>
+                                                               <td class="main-centent">男</td>
+                                                               <td class="main-title">外语语种</td>
+                                                               <td class="main-centent">英语</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">证件类型</td>
+                                                               <td class="main-centent">身份证</td>
+                                                               <td class="main-title">证件号</td>
+                                                               <td class="main-centent">440983199812100711
+                                                               </td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">出生时间</td>
+                                                               <td class="main-centent">1998-12-10</td>
+                                                               <td class="main-title">政治面貌</td>
+                                                               <td class="main-centent">团员</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">报考院校</td>
+                                                               <td class="main-centent">华南理工大学</td>
+                                                               <td class="main-title">民族</td>
+                                                               <td class="main-centent">汉族</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">专业</td>
+                                                               <td class="main-centent">工商企业管理</td>
+                                                               <td class="main-title">职业类别</td>
+                                                               <td class="main-centent">其它</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认时间</td>
+                                                               <td class="main-centent">2020-10-03</td>
+                                                               <td class="main-title">高中毕业证</td>
+                                                               <td class="main-centent">无</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认者</td>
+                                                               <td class="main-centent">李洪邦</td>
+                                                               <td class="main-title">学习形式</td>
+                                                               <td class="main-centent">成人高考</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:30px; height:250px;">
+
+                                          <div class="content_nav">
+                                                 志愿选择
+                                          </div>
+                                          <div class="main bottom">
+                                                 <table>
+                                                        <tr>
+                                                               <td>考生姓名</td>
+                                                               <td>层次</td>
+                                                               <td>科类</td>
+                                                               <td>院校</td>
+                                                               <td>专业</td>
+                                                               <td>学习形式</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>赵凯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>暨南大学</td>
+                                                               <td>行政管理</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>李力</td>
+                                                               <td>高中</td>
+                                                               <td>专科--文科</td>
+                                                               <td>华南师范大学</td>
+                                                               <td>汉语言大学</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>艾斯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--文科</td>
+                                                               <td>华南师范大学</td>
+                                                               <td>汉语言文学</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>周永发</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>暨南大学</td>
+                                                               <td>工商企业管理</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
+
+                            </div>
+                            <div class="rightmain_content">
+                                   <div class="content">
+                                          <div class="content_nav">
+                                                 考生标签
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">类别
+                                                               </td>
+                                                               <td class="main-centent">成考</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">科类
+                                                               </td>
+                                                               <td class="main-centent">专科-文科</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">州市
+                                                               </td>
+                                                               <td class="main-centent">珠海市</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">县区
+                                                               </td>
+                                                               <td class="main-centent">金湾区</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">确认点
+                                                               </td>
+                                                               <td class="main-centent">金湾区直属</td>
+                                                               <td class="main-title" style="letter-spacing:8px;">用户名
+                                                               </td>
+                                                               <td class="main-centent">ydxsj1509</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title" style="letter-spacing:8px;">姓名
+                                                               </td>
+                                                               <td class="main-centent">叶力玮</td>
+                                                               <td class="main-title" style="letter-spacing:0.1rem;">
+                                                                      报名确认状态</td>
+                                                               <td class="main-centent">已确认</td>
+                                                        </tr>
+
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:25px;height:320px;">
+                                          <div class="content_nav">
+                                                 考生报名信息
+                                          </div>
+                                          <div class="main">
+                                                 <table>
+                                                        <tr>
+                                                               <td class="main-title">性别</td>
+                                                               <td class="main-centent">女</td>
+                                                               <td class="main-title">外语语种</td>
+                                                               <td class="main-centent">英语</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">证件类型</td>
+                                                               <td class="main-centent">身份证</td>
+                                                               <td class="main-title">证件号</td>
+                                                               <td class="main-centent">440404199406298100</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">出生时间</td>
+                                                               <td class="main-centent">1994-06-29</td>
+                                                               <td class="main-title">政治面貌</td>
+                                                               <td class="main-centent">团员</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">报考院校</td>
+                                                               <td class="main-centent">华南师范大学</td>
+                                                               <td class="main-title">民族</td>
+                                                               <td class="main-centent">汉族</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">专业</td>
+                                                               <td class="main-centent">汉语言文学</td>
+                                                               <td class="main-title">职业类别</td>
+                                                               <td class="main-centent">其它</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认时间</td>
+                                                               <td class="main-centent">2020-11-03</td>
+                                                               <td class="main-title">高中毕业证</td>
+                                                               <td class="main-centent">无</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td class="main-title">确认者</td>
+                                                               <td class="main-centent">叶力玮</td>
+                                                               <td class="main-title">学习形式</td>
+                                                               <td class="main-centent">成人高考</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
+                                   <div class="content" style="margin-top:30px; height:250px;">
+
+                                          <div class="content_nav">
+                                                 志愿选择
+                                          </div>
+                                          <div class="main bottom">
+                                                 <table>
+                                                        <tr>
+                                                               <td>考生姓名</td>
+                                                               <td>层次</td>
+                                                               <td>科类</td>
+                                                               <td>院校</td>
+                                                               <td>专业</td>
+                                                               <td>学习形式</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>赵凯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>暨南大学</td>
+                                                               <td>行政管理</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>李力</td>
+                                                               <td>高中</td>
+                                                               <td>专科--文科</td>
+                                                               <td>华南师范大学</td>
+                                                               <td>汉语言大学</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>艾斯</td>
+                                                               <td>高中</td>
+                                                               <td>本科--文科</td>
+                                                               <td>华南理工大学</td>
+                                                               <td>汉语言文学</td>
+                                                               <td>自考</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td>周永发</td>
+                                                               <td>高中</td>
+                                                               <td>本科--理科</td>
+                                                               <td>广东工业大学</td>
+                                                               <td>工商企业管理</td>
+                                                               <td>函授</td>
+                                                        </tr>
+                                                 </table>
+                                          </div>
+                                   </div>
+
+                            </div>
+                     </div>
+              </div>
+       </div>
+
+       <script src="static/js/jquery.min.js"></script>
+       <script>
+              // function showRadomDiv(){
+              // var total=$(".rightmain_content").length;//获得div的总个数
+              // var showDiv= Math.floor(Math.random()*2);//获得显示div的随机数
+              // for(var i=0;i<total;i++){
+              // if(i==showDiv){
+              //     $(".rightmain_content")[i].style.display="block";//显示随机的div;
+              // }else{
+              //     $(".rightmain_content")[i].style.display="none";//隐藏其它div,
+              // }
+              // }
+              // }
+              // window.onload={
+              // showRadomDiv();//当页面打开或者页面刷新的时候调用函数
+              // }
+
+              $(function () {
+                     var total = $(".rightmain_content").length;//获得div的总个数
+                     var showDiv = Math.floor(Math.random() * 3);//获得显示div的随机数
+                     for (var i = 0; i < total; i++) {
+                            if (i == showDiv) {
+                                   $(".rightmain_content")[i].style.display = "block";//显示随机的div;
+                            } else {
+                                   $(".rightmain_content")[i].style.display = "none";//隐藏其它div,
+                            }
+                     }
+              })
+       </script>
+
+</body>
+
 </html>
