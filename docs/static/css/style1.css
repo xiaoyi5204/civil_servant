@@ -64,7 +64,7 @@ html{
 	width: 200px;
 	/* height: 100%; */
 
-	background: #88a1ad;
+	background: #2f5495;
 	/* opacity:0.5; */
 	color: #fff;
 	overflow: auto;
@@ -108,7 +108,7 @@ html{
 	height: 60px;
 	line-height: 60px;
 	font-size:22px;
-	color: #204359;
+	color: #2f5495;
 	float: left;
 }
 .rightmain_top ul li.right{
@@ -149,11 +149,11 @@ html{
 	cursor: pointer;
 }
 .newswp_leftnav ul li a.current{
-	background: #204259;
+	background: #426cb7;
 	cursor: pointer;
 }
 .newswp_leftnav ul li a:hover{
-	background: #204259;
+	background: #426cb7;
 	cursor: pointer;
 }
 .newswp_leftnav ul li img{
@@ -175,7 +175,7 @@ html{
 .content{
 	width: 100%;
 	height: 690px;
-	border:3px solid #204259;
+	border:3px solid #2f5495;
 	position: relative;
 	padding-top: 62px;
 	box-sizing: border-box;
@@ -240,7 +240,7 @@ table tr td{
 	cursor: pointer;
 }
 .content_nav ul li.hot{
-	background: #204259;
+	background: #2f5495;
 	color: #fff;
 }
 .new_page1{
@@ -255,7 +255,7 @@ table tr td{
 .line{
 	width: 3px;
 	height: 17px;
-	background: #204259;
+	background: #2f5495;
 	display: inline-block;
 	vertical-align: -3px;
 	margin-right:3px;
@@ -305,10 +305,10 @@ select{
 }
 .head-content .logo {
 	position: absolute;
-	left: 30px;
-	top: 15px;
-	width: 100px;
-	height: 80px;
-	background-image: url(../images/logo.png);
+	left: 22px;
+	top: 20px;
+	width: 206px;
+	height: 60px;
+	background-image: url(../images/logo1.png);
 	background-size: 100% 100%;
 }
