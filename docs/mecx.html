@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="height: 100%;width:100%">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; width:100%">
+    <div id="chart-panel" style="height: 1000px;width:1000px"></div>
+    <script type="text/javascript" src="./static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("chart-panel");
+        var myChart = echarts.init(dom);
+        var option;
+        var app = {};
+
+        loadMap('./static/js/100000_full.json', 'china')
+        function randomData () {
+            return Math.round(Math.random() * 5000);
+        }
+
+        let LableData = [
+            {
+                name: '青海省',
+                coords: [
+                    [101.778916, 36.623178],
+                    [101.798916, 36.623178],
+                ],
+            },
+
+        ];
+
+        function loadMap (mapCode, name) {
+            $.get(mapCode, function (data) {
+                if (data) {
+                    echarts.registerMap(name, data);
+                    var option = {
+                        title: {
+                            text: '',
+                            left: 'center',
+                        },
+                        geo: {
+                            map: 'china',
+                            nameProperty: 'name'
+                        },
+                        series: [
+                            {
+                                type: 'map',
+                                mapType: name,
+                                selectedMode: false, //是否允许选中多个区域
+                                label: {
+                                    normal: {
+                                        show: false
+                                    },
+                                    emphasis: {
+                                        show: true
+                                    }
+                                },
+                                itemStyle: {
+
+                                    normal: {
+                                        areaColor: '#f27862',
+                                        borderColor: '#fff',
+                                        borderWidth: 1,
+                                    },
+                                    emphasis: {
+                                        areaColor: '#f27802'
+                                    }
+                                },
+                                // zoom: 1, //当前视角的缩放比例
+                                // roam: true, //是否开启平游或缩放
+                                // scaleLimit: { //滚轮缩放的极限控制
+                                //     min: 1,
+                                //     max: 2
+                                // },
+                                data: [
+                                    {
+                                        name: "青海省",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                    {
+                                        name: "河北省",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                    {
+                                        name: "山东省",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                    {
+                                        name: "河南省",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                    {
+                                        name: "陕西省",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                    {
+                                        name: "北京市",
+                                        itemStyle: {
+                                            areaColor: "#f4b183",
+                                        },
+                                    },
+                                ]
+                            },
+                            {
+                                type: 'lines',
+                                zlevel: 10,
+                                // symbol: 'circle',
+                                symbol: 'none',
+                                name: 'test',
+                                symbolSize: [15, 15],
+                                color: '#4699b1',
+                                opacity: 1,
+                                // polyline:true,
+                                label: {
+                                    show: true,
+                                    // padding: [0, 10],
+                                    color: '#000',
+                                    borderWidth: 2,
+                                    borderRadius: 6,
+                                    formatter (params) {
+                                        let arr = [params.name];
+                                        console.log(arr)
+                                        return arr.join('\n');
+
+                                    },
+                                    textStyle: {
+                                        align: 'left',
+                                        lineHeight: 20,
+                                        color: '#000', fontSize: '18px'
+                                    },
+                                },
+                                lineStyle: {
+                                    type: 'solid',
+                                    color: '#b2a79f',
+                                    width: 2,
+                                    opacity: 1,
+                                    join: "miter",
+                                    miterLimit: 10
+                                },
+                                data: [
+                                    {
+                                        name: '青海省',
+                                        label: '青海',
+                                        coords: [
+                                            [96.043533, 35.726403],
+                                            // [90.043533,35.726403],
+                                            // [90.043533,35.726403],
+                                            // [90.043533,50.726403],
+                                            [85.043533, 50.726403],
+                                        ],
+                                    },
+
+                                ],
+                            },
+                        ]
+                    };
+                    myChart.setOption(option);
+                } else {
+                    alert('无法加载该地图')
+                }
+            });
+        }
+
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+    </script>
+</body>
+
+</html>
