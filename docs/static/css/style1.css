@@ -300,3 +300,15 @@ select{
 	box-sizing: border-box;
 	line-height: 42px;
 }
+.head-content {
+	position: relative;
+}
+.head-content .logo {
+	position: absolute;
+	left: 30px;
+	top: 15px;
+	width: 100px;
+	height: 80px;
+	background-image: url(../images/logo.png);
+	background-size: 100% 100%;
+}
