@@ -3,14 +3,109 @@
 
 <head>
     <meta charset="utf-8">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+
+
+        #chart-panel,
+        .right {
+            height: 100%;
+            width: 50%;
+        }
+
+        .right-head {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .right-search-content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .right-result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-time {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
-<body style="height: 100%; width:100%">
-    <div id="chart-panel" style="height: 1000px;width:1000px"></div>
+<body>
+    <div id="app">
+        <div id="chart-panel"></div>
+        <div class="right">
+            <div class="right-head">无忧班优惠名额查询系统</div>
+            <div class="right-search-content">
+                <label for="area">地区：</label>
+                <input type="text" placeholder="请输入地区" id="area">
+                <input type="button" value="搜索" class="search-btn" onclick="onsearch">
+            </div>
+            <div class="right-result">
+                <p>总名额：<span id="total">20</span></p>
+                <p>已使用：<span id="inuse">15</span></p>
+                <p>剩余：<span id="surplus">5</span></p>
+            </div>
+            <div class="search-time">
+                查询时间: <span class="search-time-content"></span>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./static/js/echarts.min.js"></script>
     <script type="text/javascript" src="./static/js/jquery.min.js"></script>
 
     <script type="text/javascript">
+        $(".right .search-btn").click(function () {
+            let total = $("#total").text()
+            let inuse = $("#inuse").text()
+            let area = $("#area").val()
+            if (area == "") {
+                alert("请输入地区")
+                return
+            }
+            let now = new Date()
+            //修改查询时间
+            let time = now.getFullYear()
+                + "/" + (now.getMonth() + 1) + "/" + now.getDate()
+                + " " + now.getHours() + ":" + now.getMinutes()
+                + ":" + now.getSeconds();
+            $(".search-time .search-time-content").text(time)
+
+            // 生成随机名额
+            let quota = Math.ceil(Math.random() * 20);
+            while (quota < 13 || quota > 18) {
+                quota = Math.ceil(Math.random() * 20)
+            }
+            $("#inuse").text(quota)
+            $("#surplus").text(20 - quota)
+        });
+
         var dom = document.getElementById("chart-panel");
         var myChart = echarts.init(dom);
         var option;
@@ -121,45 +216,70 @@
                                 symbol: 'none',
                                 name: 'test',
                                 symbolSize: [15, 15],
-                                color: '#4699b1',
+                                color: '#a5a5a5',
                                 opacity: 1,
                                 // polyline:true,
                                 label: {
                                     show: true,
-                                    // padding: [0, 10],
+                                    padding: [4, 5],
                                     color: '#000',
-                                    borderWidth: 2,
-                                    borderRadius: 6,
-                                    formatter (params) {
-                                        let arr = [params.name];
-                                        console.log(arr)
-                                        return arr.join('\n');
+                                    borderRadius: 4,
 
-                                    },
+                                    borderColor: '#000',
+                                    borderWidth: 1,
                                     textStyle: {
-                                        align: 'left',
-                                        lineHeight: 20,
-                                        color: '#000', fontSize: '18px'
+                                        color: '#000',
+                                        lineStyle: '12px'
+
                                     },
                                 },
                                 lineStyle: {
                                     type: 'solid',
-                                    color: '#b2a79f',
-                                    width: 2,
+                                    color: '#a5a5a5',
+                                    width: 1,
                                     opacity: 1,
-                                    join: "miter",
-                                    miterLimit: 10
                                 },
                                 data: [
                                     {
-                                        name: '青海省',
-                                        label: '青海',
+                                        name: '青海省级分校\n青海师资中心',
                                         coords: [
                                             [96.043533, 35.726403],
-                                            // [90.043533,35.726403],
-                                            // [90.043533,35.726403],
-                                            // [90.043533,50.726403],
-                                            [85.043533, 50.726403],
+                                            [78.043533, 45.726403],
+                                        ],
+                                    },
+                                    {
+                                        name: '西安师资中心\n陕西省级分校',
+                                        coords: [
+                                            [108.887114, 34.263661],
+                                            [98.043533, 45.726403],
+                                        ],
+                                    },
+                                    {
+                                        name: '河南省级分校',
+                                        coords: [
+                                            [113.619717, 33.902648],
+                                            [125.619717, 28.902648],
+                                        ],
+                                    },
+                                    {
+                                        name: '山东省级分校',
+                                        coords: [
+                                            [118.187759, 36.376092],
+                                            [125.187759, 33.376092],
+                                        ],
+                                    },
+                                    {
+                                        name: '河北省级分校',
+                                        coords: [
+                                            [115.502461, 38.045474],
+                                            [125.502461, 38.045474],
+                                        ],
+                                    },
+                                    {
+                                        name: '北京总部 北京师资中心\n昌平分校 大兴分校',
+                                        coords: [
+                                            [116.41995, 40.18994],
+                                            [107.41995, 50.18994],
                                         ],
                                     },
 
@@ -174,10 +294,16 @@
             });
         }
 
-
+        myChart.on('click', function (param) {
+            console.log(param)
+            $("#area").val(param.data.name)
+        });
         if (option && typeof option === 'object') {
             myChart.setOption(option);
         }
+        window.addEventListener('resize', function () {
+            myChart.resize()
+        })
     </script>
 </body>
 
