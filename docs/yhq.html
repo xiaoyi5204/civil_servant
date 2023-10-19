@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>明德公考招生工作网</title>
+  <script src="static/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="static/css/cxcalendar.css" type="text/css" />
+  <link type="text/css" href="static/css/cssxyf.css" rel="stylesheet" />
+  <link type="text/css" href="static/css/style1.css" rel="stylesheet" />
+  <script type="text/javascript" src="static/js/message.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var url = this.location.href;
+      $("form #field3").each(function (n) {
+        $("form #field3").get(n).value = url;
+      })
+    })
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      //倒计时js开始
+      var mydate = new Date();
+      $(".month").html(mydate.getMonth() + 1)
+      $(".day").html(mydate.getDate())
+
+    });
+  </script>
+  <script type="text/javascript" src="static/js/timexyf.js"></script>
+  <script type="text/javascript" src="static/js/maydate.js"></script>
+  <script type="text/javascript" src="static/js/calendar.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .newswp_right input {
+      background-color: #fff;
+      border-radius: none;
+      height: 30px;
+    }
+
+    .result-right table tr {
+      background-color: #fafafa;
+      /* border: none; */
+    }
+
+    .result-right table td {
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height:105px; background-color: #2f5495;" class="head-content">
+    <div class="logo"></div>
+    <div
+      style="color: white;font-size:36px;width:600px;margin:0 auto; position: relative; top:30px; text-shadow:2px 2px 0px #08324d;font-weight: 500;text-align: center;">
+      2024年度考试录用公务员报名入口
+    </div>
+  </div>
+  <div class="newswp">
+    <div class="newswp_left" style="height:750px;">
+
+      <div class="newswp_leftnav">
+        <ul>
+          <!-- <li> <a href="index.html"> <img src="static/picture/pic1.png" alt="" /> 学员报名信息查询表 </a> </li> -->
+          <li> <a href="ybm.html"> <img src="static/picture/pic2.png" alt="" /> 预报名系统</a> </li>
+          <!-- <li> <a href="bbdj.html"> <img src="static/picture/pic3.png" alt="" /> 补办登记系统 </a> </li>
+                    <li> <a href="zxsq.html" class="current"> <img src="static/picture/pic4.png" alt="" /> 助学金申请 </a>
+                    </li>
+                    <li> <a href="fqsq.html"> <img src="static/picture/pic5.png" alt="" /> 分期申请系统 </a> </li>
+                    <li> <a href="fxyy.html"> <img src="static/picture/pic6.png" alt="" /> 分校预约 </a> </li>
+                    <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a> </li>
+                    <li> <a href="sms.html"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li> -->
+          <li> <a href="yhq.html" class="current"> <img src="static/picture/pic7.png" alt="" /> 优惠券申请 </a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="newswp_right form-right" style="height:750px;">
+      <div class="right_swp">
+        <div class="rightmain_top">
+          <ul>
+            <li class="left"> 教学点助学金申请 </li>
+          </ul>
+        </div>
+        <div class="rightmain_content">
+          <div class="content" style="height:620px;">
+            <div class="content_nav">
+              <ul>
+                <li class="tab1 hot">助学金申请系统</li>
+                <!-- <li class="tab2">申请须知</li>  -->
+              </ul>
+            </div>
+            <div class="new_page1" style="margin-top:-50px;">
+              <div class="shijian" style="width: 100%; height: 26px;">
+                <div id="showtime"></div>
+              </div>
+              <h1 style="font-size: 26px; height: 48px;margin-top: 10px;">提醒：本批次报名即将截止，助学金申请通道将于<span
+                  id="spantime"></span>23:59关闭！！！
+              </h1>
+              <form name="messageForm" method="post" action="/message.action" id="messageForm1">
+                <table border="0" cellpadding="0" cellspacing="1"
+                  style="line-height:46px; width: 100%; background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0; ">
+                  <tbody>
+                    <tr>
+                      <td height="52" colspan="2"
+                        style=" text-align:left;color: #214054;font-size:18px; background: #dee0e3;">
+                        <span class="line"></span> 优惠券申请
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>姓名</td>
+                      <td><input class="username" /></td>
+                    </tr>
+                    <tr>
+                      <td>地区</td>
+                      <td><input class="area" /></td>
+                    </tr>
+                    <tr>
+                      <td>身份证号</td>
+                      <td><input class="idcard" /></td>
+                    </tr>
+                    <tr>
+                      <td>专业</td>
+                      <td><input class="major" /></td>
+                    </tr>
+                    <tr>
+                      <td>班型</td>
+                      <td><input class="class" /></td>
+                    </tr>
+                    <tr>
+                      <td>学费</td>
+                      <td><input type="number" class="tuition" /></td>
+                    </tr>
+                    <tr>
+                      <td>优惠券额度</td>
+                      <td><input type="number" class="amount" /></td>
+                    </tr>
+                    <tr>
+                      <td>优惠券有效期</td>
+                      <td><input type="date" class="period" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+              <div style="text-align: center;margin-top: 20px;">
+                <input type="button" name="" id="generate" value="生成"
+                  style="width: 120px;height: 40px;cursor: pointer;background-color: #2f5495;color:#fff;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newswp_right result-right"
+      style="height:750px;padding: 30px 150px;background-color: #fafafa;display:none;">
+      <div style="color: #4c4f52;font-size: 17px;font-weight: 600;margin-bottom: 25px;">确认订单信息</div>
+      <div style="border: 1px solid #e6e6e6;">
+        <table border="0" cellpadding="0" cellspacing="0"
+          style="line-height:46px; width: 100%; background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0;border:none; ">
+          <tr style="background: #e6e6e6;height: 40px;text-align: center;font-weight: 500;">
+            <td>商品名称</td>
+            <td>报考省份 </td>
+            <td>单价 </td>
+            <td>数量</td>
+            <td>小计</td>
+          </tr>
+          <tr>
+            <td>【<span id="major"></span>】<span id="class"></span></td>
+            <td><span id="area"></span> </td>
+            <td><span id="tuition"> </td>
+            <td>1</td>
+            <td><span id="tuition1"></span>元</td>
+          </tr>
+          <tr>
+            <td>【保险服务】<span id="class"></span></td>
+            <td> </td>
+            <td>赠送</td>
+            <td>1</td>
+            <td>0.0元</td>
+          </tr>
+        </table>
+      </div>
+      <div style="margin-top: 15px;"><span style="color: #4c4f52;font-size: 17px;font-weight: 600;">选择优惠券</span><span
+          style="color: #898989;font-size: 14px;margin-left: 5px;font-weight: 500;">（保险和服务不参与优惠）</span></div>
+      <div
+        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
+        <span>优惠券： </span>
+        <span>明德公考已为您计算出最大优惠金额<span id="amount"></span>元</span>
+      </div>
+      <div>
+        <div class="card"
+          style="width: 205px;height: 100px;background-color: #ff6071;border-radius: 4px;padding: 12px 0 10px 0;margin-top: 15px;color:#fff;position: relative;">
+          <img src="./static/images/yhqicon.png" alt="" style="position: absolute;top: 2px;right: 5px;">
+          <div style="height: 40px;text-align: center;">￥<span id="amount1" style="font-size: 40px;"></span> 不可叠加</div>
+          <div style="height: 20px;text-align: center;font-size: 12px;margin-top: 15px;">有效期至：<span id="period"></span>
+          </div>
+        </div>
+      </div>
+      <h1 style="color: #4c4f52;font-size: 17px;margin-top: 15px;font-weight: 600;">选择选择分期方式
+      </h1>
+      <div
+        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
+        <span>分期券： </span>
+        <span>您暂无分期券</span>
+      </div>
+      <div
+        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;font-size: 14px;color: #4c4f52;font-weight: 600;">
+        <span>确认学员信息</span>
+        <span style="color: #898989;font-weight: 500;">（为了您能顺利投保，需要您的实名信息）</span>
+      </div>
+      <div
+        style="display: flex;justify-content:space-between ;padding: 10px 0 30px 10px;font-size: 16px;color: #4c4f52;border-bottom: 1px solid #d8d8d8;">
+        <div>
+
+          <span>姓名</span>
+          <input type="text" disabled id="username" style="width: 280px;height: 25px;">
+          <span style="margin-left: 10px;">必填</span>
+        </div>
+        <div>
+          <span>身份证
+          </span>
+          <input type="text" disabled id="idCard" style="width: 280px;height: 25px;">
+          <span style="margin-left: 10px;">必填</span>
+        </div>
+
+      </div>
+      <div style="text-align: right;margin-top: 20px;margin-bottom: 10px;">
+        <span>
+          <span><img src="./static/images/jineicon.png" alt="" style="vertical-align: middle;"></span>
+          <span style="color: #090909;">金额明细</span>
+        </span>
+        <span style="margin-left: 30px;">
+          <span style="color: #4c4f52;">应付金额</span>
+          <span style="font-size: 18px;color: #efb032;font-weight: 600;"><span id="yfje"></span>元</span>
+        </span>
+
+      </div>
+      <div style="text-align: right;color: #898989;font-size: 14px;margin-bottom: 30px">
+        请如实核实报考信息
+      </div>
+      <div style="text-align: right;">
+        <input type="button" style="width: 140px;height: 40px;background-color: #e80015;color: #fff;cursor: pointer;"
+          id="back" value="确认并支付">
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let info = {
+      username: "",
+      area: "",
+      idcard: "",
+      major: "",
+      classType: "",
+      tuition: "",
+      amount: ""
+    }
+
+    $('#generate').click(function () {
+      let username = $('.username').val();
+      let area = $('.area').val();
+      let idcard = $('.idcard').val();
+      let major = $('.major').val();
+      let classType = $('.class').val();
+      let tuition = $('.tuition').val();
+      let amount = $('.amount').val();
+      let period = $('.period').val();
+      info = {
+        username: username,
+        area: area,
+        idcard: idcard,
+        major: major,
+        classType: classType,
+        tuition: tuition,
+        amount: amount
+      }
+      $('#username').val(username);
+      $('#area').text(area);
+      $('#idCard').val(idcard);
+      $('#major').text(major);
+      $('#class').text(classType);
+      $('#tuition').text(tuition);
+      $('#tuition1').text(tuition);
+      $('#amount').text(amount);
+      $('#amount1').text(amount);
+      $('#period').text(period);
+      $('#yfje').text(tuition - amount);
+      $('.form-right').hide()
+      $('.result-right').show()
+    })
+
+    $('#back').click(function () {
+      $('.form-right').show()
+      $('.result-right').hide()
+    })
+
+  </script>
+
+
+
+
+</body>
+
+</html>
