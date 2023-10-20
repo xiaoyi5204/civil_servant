@@ -28,6 +28,8 @@
   <script type="text/javascript" src="static/js/timexyf.js"></script>
   <script type="text/javascript" src="static/js/maydate.js"></script>
   <script type="text/javascript" src="static/js/calendar.js"></script>
+  <script type="text/javascript" src="static/js/province.js"></script>
+  <script type="text/javascript" src="static/js/html2canvas.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -41,11 +43,36 @@
 
     .result-right table tr {
       background-color: #fafafa;
-      /* border: none; */
     }
 
     .result-right table td {
       border: none;
+    }
+
+    .form-right table {
+      width: 500px;
+    }
+
+    .form-right table td {
+      padding: 5px 8px;
+    }
+
+    .form-right table td input,
+    .form-right table td select {
+      width: 200px;
+      height: 40px;
+    }
+
+    .form-right table td .period {
+      position: relative;
+    }
+
+    .period::-webkit-calendar-picker-indicator {
+      position: absolute;
+      right: 0;
+      padding-left: calc(100% - 10px);
+      padding-right: 10px;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -59,7 +86,7 @@
     </div>
   </div>
   <div class="newswp">
-    <div class="newswp_left" style="height:750px;">
+    <div class="newswp_left" style="height:820px;">
 
       <div class="newswp_leftnav">
         <ul>
@@ -76,18 +103,18 @@
         </ul>
       </div>
     </div>
-    <div class="newswp_right form-right" style="height:750px;">
+    <div class="newswp_right form-right" style="height:820px;">
       <div class="right_swp">
         <div class="rightmain_top">
           <ul>
-            <li class="left"> 教学点助学金申请 </li>
+            <li class="left"> 优惠券申请 </li>
           </ul>
         </div>
         <div class="rightmain_content">
-          <div class="content" style="height:620px;">
+          <div class="content" style="height:720px;">
             <div class="content_nav">
               <ul>
-                <li class="tab1 hot">助学金申请系统</li>
+                <li class="tab1 hot">优惠券申请系统</li>
                 <!-- <li class="tab2">申请须知</li>  -->
               </ul>
             </div>
@@ -95,12 +122,12 @@
               <div class="shijian" style="width: 100%; height: 26px;">
                 <div id="showtime"></div>
               </div>
-              <h1 style="font-size: 26px; height: 48px;margin-top: 10px;">提醒：本批次报名即将截止，助学金申请通道将于<span
+              <h1 style="font-size: 26px; height: 48px;margin-top: 10px;">提醒：本批次报名即将截止，优惠券申请通道将于<span
                   id="spantime"></span>23:59关闭！！！
               </h1>
               <form name="messageForm" method="post" action="/message.action" id="messageForm1">
                 <table border="0" cellpadding="0" cellspacing="1"
-                  style="line-height:46px; width: 100%; background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0; ">
+                  style="line-height:46px;  background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0; ">
                   <tbody>
                     <tr>
                       <td height="52" colspan="2"
@@ -114,7 +141,13 @@
                     </tr>
                     <tr>
                       <td>地区</td>
-                      <td><input class="area" /></td>
+                      <td><select name="msg.field4" class="area" style="background-color: #fff;">
+                          <option>湖北</option>
+                          <option>湖南</option>
+                          <option>广东</option>
+                          <option>云南</option>
+                          <option>贵州</option>
+                        </select> </td>
                     </tr>
                     <tr>
                       <td>身份证号</td>
@@ -152,101 +185,119 @@
         </div>
       </div>
     </div>
-    <div class="newswp_right result-right"
-      style="height:750px;padding: 30px 150px;background-color: #fafafa;display:none;">
-      <div style="color: #4c4f52;font-size: 17px;font-weight: 600;margin-bottom: 25px;">确认订单信息</div>
-      <div style="border: 1px solid #e6e6e6;">
-        <table border="0" cellpadding="0" cellspacing="0"
-          style="line-height:46px; width: 100%; background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0;border:none; ">
-          <tr style="background: #e6e6e6;height: 40px;text-align: center;font-weight: 500;">
-            <td>商品名称</td>
-            <td>报考省份 </td>
-            <td>单价 </td>
-            <td>数量</td>
-            <td>小计</td>
-          </tr>
-          <tr>
-            <td>【<span id="major"></span>】<span id="class"></span></td>
-            <td><span id="area"></span> </td>
-            <td><span id="tuition"> </td>
-            <td>1</td>
-            <td><span id="tuition1"></span>元</td>
-          </tr>
-          <tr>
-            <td>【保险服务】<span id="class"></span></td>
-            <td> </td>
-            <td>赠送</td>
-            <td>1</td>
-            <td>0.0元</td>
-          </tr>
-        </table>
-      </div>
-      <div style="margin-top: 15px;"><span style="color: #4c4f52;font-size: 17px;font-weight: 600;">选择优惠券</span><span
-          style="color: #898989;font-size: 14px;margin-left: 5px;font-weight: 500;">（保险和服务不参与优惠）</span></div>
+    <div class="newswp_right result-right" style="height:820px;background-color: #fafafa;display:none;">
       <div
-        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
-        <span>优惠券： </span>
-        <span>明德公考已为您计算出最大优惠金额<span id="amount"></span>元</span>
+        style="display:inline-block;text-align: center;border-radius: 2px;width: 140px;height: 40px;line-height:40px;background-color: #2f5495;color: #fff;cursor: pointer;margin: 10px 0 0 10px;font-size: 20px;"
+        id="screenshot">
+        截图
       </div>
-      <div>
-        <div class="card"
-          style="width: 205px;height: 100px;background-color: #ff6071;border-radius: 4px;padding: 12px 0 10px 0;margin-top: 15px;color:#fff;position: relative;">
-          <img src="./static/images/yhqicon.png" alt="" style="position: absolute;top: 2px;right: 5px;">
-          <div style="height: 40px;text-align: center;">￥<span id="amount1" style="font-size: 40px;"></span> 不可叠加</div>
-          <div style="height: 20px;text-align: center;font-size: 12px;margin-top: 15px;">有效期至：<span id="period"></span>
+      <div id="result-content" style="padding: 30px 150px;">
+        <div style="color: #4c4f52;font-size: 17px;font-weight: 600;margin-bottom: 25px;">确认订单信息</div>
+        <div style="border: 1px solid #e6e6e6;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="line-height:46px; width: 100%; background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0;border:none; ">
+            <tr style="background: #e6e6e6;height: 40px;text-align: center;font-weight: 500;">
+              <td>商品名称</td>
+              <td>报考省份 </td>
+              <td>单价 </td>
+              <td>数量</td>
+              <td>小计</td>
+            </tr>
+            <tr>
+              <td>【<span id="major"></span>】<span id="class"></span></td>
+              <td><span id="area"></span> </td>
+              <td><span id="tuition"> </td>
+              <td>1</td>
+              <td><span id="tuition1"></span>元</td>
+            </tr>
+            <tr>
+              <td>【保险服务】<span id="class"></span></td>
+              <td> </td>
+              <td>赠送</td>
+              <td>1</td>
+              <td>0.0元</td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin-top: 15px;"><span style="color: #4c4f52;font-size: 17px;font-weight: 600;">选择优惠券</span><span
+            style="color: #898989;font-size: 14px;margin-left: 5px;font-weight: 500;">（保险和服务不参与优惠）</span></div>
+        <div
+          style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
+          <span>优惠券： </span>
+          <span>明德公考已为您计算出最大优惠金额<span id="amount"></span>元</span>
+        </div>
+        <div>
+          <div class="card"
+            style="width: 205px;height: 100px;background-color: #ff6071;border-radius: 4px;padding: 12px 0 10px 0;margin-top: 15px;color:#fff;position: relative;">
+            <img src="./static/images/yhqicon.png" alt="" style="position: absolute;top: 2px;right: 5px;">
+            <div style="height: 40px;text-align: center;">￥<span id="amount1" style="font-size: 40px;"></span> 不可叠加
+            </div>
+            <div style="height: 20px;text-align: center;font-size: 12px;margin-top: 15px;">有效期至：<span
+                id="period"></span>
+            </div>
+          </div>
+        </div>
+        <h1 style="color: #4c4f52;font-size: 17px;margin-top: 15px;font-weight: 600;">选择选择分期方式
+        </h1>
+        <div
+          style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
+          <span>分期券： </span>
+          <span>您暂无分期券</span>
+        </div>
+        <div
+          style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;font-size: 14px;color: #4c4f52;font-weight: 600;">
+          <span>确认学员信息</span>
+          <span style="color: #898989;font-weight: 500;">（为了您能顺利投保，需要您的实名信息）</span>
+        </div>
+        <div
+          style="display: flex;justify-content:space-between ;padding: 10px 0 30px 10px;font-size: 16px;color: #4c4f52;border-bottom: 1px solid #d8d8d8;">
+          <div>
+
+            <span>姓名</span>
+            <input type="text" disabled id="username" style="width: 280px;height: 25px;">
+            <span style="margin-left: 10px;">必填</span>
+          </div>
+          <div>
+            <span>身份证
+            </span>
+            <input type="text" disabled id="idCard" style="width: 280px;height: 25px;">
+            <span style="margin-left: 10px;">必填</span>
+          </div>
+
+        </div>
+        <div style="text-align: right;margin-top: 20px;margin-bottom: 10px;">
+          <span>
+            <span><img src="./static/images/jineicon.png" alt="" style="vertical-align: middle;"></span>
+            <span style="color: #090909;">金额明细</span>
+          </span>
+          <span style="margin-left: 30px;">
+            <span style="color: #4c4f52;">应付金额</span>
+            <span style="font-size: 18px;color: #efb032;font-weight: 600;"><span id="yfje"></span>元</span>
+          </span>
+
+        </div>
+        <div style="text-align: right;color: #898989;font-size: 14px;margin-bottom: 10px">
+          请如实核实报考信息
+        </div>
+        <div style="text-align: right;">
+          <div
+            style="display:inline-block;text-align: center;border-radius: 2px;width: 140px;height: 40px;line-height:40px;background-color: #e80015;color: #fff;cursor: pointer;"
+            id="back">
+            确认并支付
           </div>
         </div>
       </div>
-      <h1 style="color: #4c4f52;font-size: 17px;margin-top: 15px;font-weight: 600;">选择选择分期方式
-      </h1>
-      <div
-        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
-        <span>分期券： </span>
-        <span>您暂无分期券</span>
-      </div>
-      <div
-        style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;font-size: 14px;color: #4c4f52;font-weight: 600;">
-        <span>确认学员信息</span>
-        <span style="color: #898989;font-weight: 500;">（为了您能顺利投保，需要您的实名信息）</span>
-      </div>
-      <div
-        style="display: flex;justify-content:space-between ;padding: 10px 0 30px 10px;font-size: 16px;color: #4c4f52;border-bottom: 1px solid #d8d8d8;">
-        <div>
-
-          <span>姓名</span>
-          <input type="text" disabled id="username" style="width: 280px;height: 25px;">
-          <span style="margin-left: 10px;">必填</span>
-        </div>
-        <div>
-          <span>身份证
-          </span>
-          <input type="text" disabled id="idCard" style="width: 280px;height: 25px;">
-          <span style="margin-left: 10px;">必填</span>
-        </div>
-
-      </div>
-      <div style="text-align: right;margin-top: 20px;margin-bottom: 10px;">
-        <span>
-          <span><img src="./static/images/jineicon.png" alt="" style="vertical-align: middle;"></span>
-          <span style="color: #090909;">金额明细</span>
-        </span>
-        <span style="margin-left: 30px;">
-          <span style="color: #4c4f52;">应付金额</span>
-          <span style="font-size: 18px;color: #efb032;font-weight: 600;"><span id="yfje"></span>元</span>
-        </span>
-
-      </div>
-      <div style="text-align: right;color: #898989;font-size: 14px;margin-bottom: 30px">
-        请如实核实报考信息
-      </div>
-      <div style="text-align: right;">
-        <input type="button" style="width: 140px;height: 40px;background-color: #e80015;color: #fff;cursor: pointer;"
-          id="back" value="确认并支付">
-      </div>
     </div>
+
   </div>
 
   <script type="text/javascript">
+    console.log(html2canvas)
+    const provinceOptions = province.map(item => {
+      return "<option value='" + item + "'>" + item + "</option>"
+    })
+    $('.area').html(provinceOptions.join(""))
+
     let info = {
       username: "",
       area: "",
@@ -294,6 +345,26 @@
       $('.form-right').show()
       $('.result-right').hide()
     })
+
+    $('#screenshot').click(function () {
+      downloadImg()
+    })
+
+    function downloadImg () {
+      html2canvas(document.getElementById('result-content'), {
+        allowTaint: true,
+        useCORS: true,
+      }).then(canvas => {
+        let oImg = new Image();
+        oImg = canvas.toDataURL('image/png');
+        var oA = document.createElement("a");
+        oA.download = +new Date() + '.png';
+        oA.href = oImg;
+        document.body.appendChild(oA);
+        oA.click();
+        oA.remove();
+      });
+    }
 
   </script>
 
