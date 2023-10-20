@@ -100,6 +100,7 @@
                     <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a> </li>
                     <li> <a href="sms.html"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li> -->
           <li> <a href="discounts.html" class="current"> <img src="static/picture/pic7.png" alt="" /> 优惠券申请 </a> </li>
+          <li> <a href="examination_approval.html"> <img src="static/picture/pic6.png" alt="" /> 报考审核 </a> </li>
         </ul>
       </div>
     </div>
@@ -171,7 +172,7 @@
                     </tr>
                     <tr>
                       <td>优惠券有效期</td>
-                      <td><input type="date" class="period" /></td>
+                      <td><input type="datetime-local" class="period" /></td>
                     </tr>
                   </tbody>
                 </table>
@@ -223,8 +224,10 @@
             </tr>
           </table>
         </div>
-        <div style="margin-top: 15px;"><span style="color: #4c4f52;font-size: 17px;font-weight: 600;">选择优惠券</span><span
-            style="color: #898989;font-size: 14px;margin-left: 5px;font-weight: 500;">（保险和服务不参与优惠）</span></div>
+        <div style="margin-top: 15px;"><span style="color: #4c4f52;font-size: 17px;font-weight: 600;">选择优惠券</span>
+          <!-- <span
+            style="color: #898989;font-size: 14px;margin-left: 5px;font-weight: 500;">（保险和服务不参与优惠）</span> -->
+          </div>
         <div
           style="margin-top: 10px;padding-left: 15px;height: 40px;line-height: 40px;border: 1px solid #e6e6e6;font-size: 14px;color: #4c4f52;font-weight: 600;">
           <span>优惠券： </span>
@@ -330,6 +333,10 @@
         tuition: tuition,
         amount: amount
       }
+      const date = new Date(period);
+
+      const formattedDateTime = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:59`;
+
       $('#username').val(username);
       $('#area').text(area);
       $('#idCard').val(idcard);
@@ -339,7 +346,7 @@
       $('#tuition1').text(tuition);
       $('#amount').text(amount);
       $('#amount1').text(amount);
-      $('#period').text(period);
+      $('#period').text(formattedDateTime);
       $('#yfje').text(tuition - amount);
       $('.form-right').hide()
       $('.result-right').show()
