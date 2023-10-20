@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>明德公考招生工作网</title>
+  <script src="static/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="static/css/cxcalendar.css" type="text/css" />
+  <link type="text/css" href="static/css/cssxyf.css" rel="stylesheet" />
+  <link type="text/css" href="static/css/style1.css" rel="stylesheet" />
+  <script type="text/javascript" src="static/js/message.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var url = this.location.href;
+      $("form #field3").each(function (n) {
+        $("form #field3").get(n).value = url;
+      })
+    })
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      //倒计时js开始
+      var mydate = new Date();
+      $(".month").html(mydate.getMonth() + 1)
+      $(".day").html(mydate.getDate())
+
+    });
+  </script>
+  <script type="text/javascript" src="static/js/timexyf.js"></script>
+  <script type="text/javascript" src="static/js/maydate.js"></script>
+  <script type="text/javascript" src="static/js/calendar.js"></script>
+  <script type="text/javascript" src="static/js/province.js"></script>
+  <script type="text/javascript" src="static/js/html2canvas.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .newswp_right input {
+      background-color: #fff;
+      border-radius: none;
+      height: 30px;
+    }
+
+    .form-right table {
+      width: 100%;
+    }
+
+    .form-right table td {
+      padding: 2px 8px;
+    }
+
+    .form-right table td input,
+    .form-right table td select {
+      width: 200px;
+      height: 30px;
+      background-color: #dee0e3;
+    }
+
+    .form-right table td .period {
+      position: relative;
+    }
+
+    .result-right table tr td:nth-child(1) {
+      width: 120px;
+    }
+
+    .result-right table tr td {
+      border-color: #e3e3e3;
+    }
+
+    .result-right table tr td:nth-child(2) {
+      width: 420px;
+    }
+
+    #result-content {
+      position: relative;
+    }
+
+    #result-content #pass-fail {
+      position: absolute;
+      left: 350px;
+      bottom: 45px;
+    }
+
+    .period::-webkit-calendar-picker-indicator {
+      position: absolute;
+      right: 0;
+      padding-left: calc(100% - 10px);
+      padding-right: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height:105px; background-color: #2f5495;" class="head-content">
+    <div class="logo"></div>
+    <div
+      style="color: white;font-size:36px;width:600px;margin:0 auto; position: relative; top:30px; text-shadow:2px 2px 0px #08324d;font-weight: 500;text-align: center;">
+      2024年度考试录用公务员报名入口
+    </div>
+  </div>
+  <div class="newswp">
+    <div class="newswp_left" style="height:850px;">
+
+      <div class="newswp_leftnav">
+        <ul>
+          <!-- <li> <a href="index.html"> <img src="static/picture/pic1.png" alt="" /> 学员报名信息查询表 </a> </li> -->
+          <li> <a href="index.html"> <img src="static/picture/pic2.png" alt="" /> 预报名系统</a> </li>
+          <!-- <li> <a href="bbdj.html"> <img src="static/picture/pic3.png" alt="" /> 补办登记系统 </a> </li>
+                    <li> <a href="zxsq.html" class="current"> <img src="static/picture/pic4.png" alt="" /> 助学金申请 </a>
+                    </li>
+                    <li> <a href="fqsq.html"> <img src="static/picture/pic5.png" alt="" /> 分期申请系统 </a> </li>
+                    <li> <a href="fxyy.html"> <img src="static/picture/pic6.png" alt="" /> 分校预约 </a> </li>
+                    <li> <a href="tbsq.html"> <img src="static/picture/pic7.png" alt="" /> 团报申请系统 </a> </li>
+                    <li> <a href="sms.html"> <img src="static/picture/pic7.png" alt="" /> 短信系统 </a> </li> -->
+          <li> <a href="discounts.html"> <img src="static/picture/pic7.png" alt="" /> 优惠券申请 </a> </li>
+          <li> <a href="examination_approval.html" class="current"> <img src="static/picture/pic6.png" alt="" /> 报考审核
+            </a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="newswp_right form-right" style="height:850px;">
+      <div class="right_swp">
+        <div class="rightmain_top">
+          <ul>
+            <li class="left"> 报考审核 </li>
+          </ul>
+        </div>
+        <div class="rightmain_content">
+          <div class="content" style="height:770px;">
+            <div class="content_nav">
+              <ul>
+                <li class="tab1 hot">报考审核系统</li>
+                <!-- <li class="tab2">申请须知</li>  -->
+              </ul>
+            </div>
+            <div class="new_page1" style="margin-top:-50px;">
+              <div class="shijian" style="width: 100%; height: 26px;">
+                <div id="showtime"></div>
+              </div>
+              <h1 style="font-size: 26px; height: 48px;margin-top: 10px;">提醒：本批次报名即将截止，审核通道将于<span
+                  id="spantime"></span>23:59关闭！！！
+              </h1>
+              <form name="messageForm" method="post" action="/message.action" id="messageForm1">
+                <table border="0" cellpadding="0" cellspacing="1"
+                  style="line-height:46px;  background: #e4e7ec;; color: #717171;  margin:0 auto;border-collapse: collapse; padding: 0; ">
+                  <tbody>
+                    <tr>
+                      <td height="52" colspan="4"
+                        style=" text-align:left;color: #214054;font-size:18px; background: #dee0e3;">
+                        <span class="line"></span> 新生报考审核
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>姓名</td>
+                      <td><input class="username" /></td>
+                      <td>手机号</td>
+                      <td><input class="phone" type="number" /></td>
+                    </tr>
+                    <tr>
+                      <td>证件类型</td>
+                      <td><select class="cardtype">
+                          <option>身份证</option>
+                        </select></td>
+                      <td>证件号码</td>
+                      <td><input class="idcard" /></td>
+
+                    </tr>
+                    <tr>
+                      <td>邮箱</td>
+                      <td><input class="email" /></td>
+                      <td>是否党员</td>
+                      <td><select class="isdy">
+                          <option>是</option>
+                          <option>否</option>
+                        </select> </td>
+
+                    </tr>
+                    <tr>
+                      <td>报考地区</td>
+                      <td><select class="area">
+                        </select> </td>
+                      <td>主考院校</td>
+                      <td><input class="school" /></td>
+
+                    </tr>
+                    <tr>
+                      <td>专业</td>
+                      <td><input class="major" /></td>
+                      <td>总名额</td>
+                      <td><input type="number" class="total" /></td>
+                    </tr>
+
+                    <tr>
+                      <td>剩余名额</td>
+                      <td><input type="number" class="residue" /></td>
+                      <td>截止时间</td>
+                      <td><input type="datetime-local" class="period" /></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+              <div style="text-align: center;margin-top: 20px;">
+                <input type="button" name="" id="rest" value="重置"
+                  style="width: 120px;margin-right:10px;height: 40px;cursor: pointer;background-color: #ccc;color:#000;">
+                <input type="button" name="" id="generate-pass" value="通过生成"
+                  style="width: 120px;margin-right:10px;height: 40px;cursor: pointer;background-color: #2f5495;color:#fff;">
+                <input type="button" name="" id="generate-fail" value="不通过生成"
+                  style="width: 120px;margin-right:10px;height: 40px;cursor: pointer;background-color: #fff;color:#000;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newswp_right result-right" style="height:850px;background-color: #fff;display:none;">
+      <div
+        style="display:inline-block;text-align: center;border-radius: 2px;width: 140px;height: 40px;line-height:40px;background-color: #2f5495;color: #fff;cursor: pointer;margin: 10px 0 0 10px;font-size: 20px;"
+        id="screenshot">
+        截图
+      </div>
+      <div id="result-content" style="padding: 30px 20px;width: 650px;">
+        <table border="0" cellpadding="0" cellspacing="1" style="border-collapse: collapse; padding: 0; ">
+          <tr>
+            <td>姓名</td>
+            <td>
+              <span id="username"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>手机号</td>
+            <td>
+              <span id="phone"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>证件类型</td>
+            <td>
+              <span id="cardtype"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>证件号码</td>
+            <td>
+              <span id="idcard"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>邮箱</td>
+            <td>
+              <span id="email"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>是否党员</td>
+            <td>
+              <span id="isdy"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>报考地区</td>
+            <td>
+              <span id="area"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>主考院校</td>
+            <td>
+              <span id="school"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>专业</td>
+            <td>
+              <span id="major"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>名额状态</td>
+            <td>
+              <span id="quota"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>初审编号</td>
+            <td>
+              <span id="no"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>申请状态</td>
+            <td style="text-align: center;padding-left: 30px;">
+              <div id="status" style="text-align: left;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>截止时间</td>
+            <td>
+              <span id="period"></span>
+            </td>
+          </tr>
+        </table>
+        <img src="" id="pass-fail" />
+      </div>
+      <div style="padding-left: 10px;">
+        <div
+          style="display:inline-block;text-align: center;border-radius: 2px;width: 100px;height: 35px;line-height:30px;background-color: #2f5495;color: #fff;cursor: pointer;margin: 10px 0 0 10px;font-size: 18px;"
+          id="back">
+          返回
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    const provinceOptions = province.map(item => {
+      return "<option value='" + item + "'>" + item + "</option>"
+    })
+    $('.area').html(provinceOptions.join(""))
+
+    let info = {
+      username: "",
+      phone: "",
+      cardtype: "",
+      idcard: "",
+      email: "",
+      area: "",
+      school: "",
+      major: "",
+      total: "",
+      residue: "",
+      period: "",
+    }
+
+    $('#rest').click(function () {
+      for (const key in info) {
+        $("." + key).val("");
+      }
+    })
+
+    $('#generate-pass').click(function () {
+      onSubmit(true)
+    })
+    $('#generate-fail').click(function () {
+      onSubmit(false)
+    })
+
+    function onSubmit (success) {
+      let username = $('.username').val();
+      let phone = $('.phone').val();
+      let cardtype = $('.cardtype').val();
+      let idcard = $('.idcard').val();
+      let email = $('.email').val();
+      let isdy = $('.isdy').val();
+
+      let area = $('.area').val();
+      let school = $('.school').val();
+      let major = $('.major').val();
+      let total = $('.total').val();
+      let residue = $('.residue').val();
+      let period = $('.period').val();
+      info = {
+        username: username,
+        phone: phone,
+        cardtype: cardtype,
+        idcard: idcard,
+        email: email,
+        area: area,
+        school: school,
+        major: major,
+        total: total,
+        residue: residue,
+        period: period,
+      }
+      $('#username').text(username);
+      $('#phone').text(phone);
+      $('#cardtype').text(cardtype);
+      $('#idcard').text(idcard);
+      $('#email').text(email);
+      $('#isdy  ').text(isdy);
+      $('#area').text(area);
+      $('#school').text(school);
+      $('#major').text(major);
+
+      $('#quota').text("总名额： " + total + "；已申请名额：" + (total - residue) + "；剩余名额：" + residue + '；');
+
+      let date = new Date()
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+
+      let no = +new Date();
+      let ymdh = year + "-" + month + "-" + day + ' ';
+      $('#no').text("XSC" + year + month + day + no);
+
+      let status = "";
+      if (success) {
+        status += "<div>" + ymdh + gethms(hours, minutes, 0) + "  系统预审核通过</div>"
+        status += "<div>" + ymdh + gethms(hours, minutes, 1) + "  新生服务部审核通过</div>"
+        status += "<div>" + ymdh + gethms(hours, minutes, 3) + "  考籍档案部审核通过</div>"
+        status += "<div>" + ymdh + gethms(hours, minutes, 4) + "  新生报考平台初审录入完成</div>"
+        $("#pass-fail").attr("src", './static/images/approve_pass.png')
+      } else {
+        status += "<div>" + ymdh + gethms(hours, minutes, 0) + "  系统预审核通过</div>"
+        status += "<div>" + ymdh + gethms(hours, minutes, 1) + "  新生服务部审核通过</div>"
+        status += "<div>" + ymdh + gethms(hours, minutes, 3) + "  考籍档案部审核不通过</div>"
+        $("#pass-fail").attr("src", './static/images/approve_fail.png')
+      }
+      $('#status').html(status);
+
+      const periodDate = new Date(period);
+
+      let formattedDateTime = `${periodDate.getFullYear()}-${(periodDate.getMonth() + 1).toString().padStart(2, '0')}-${periodDate.getDate().toString().padStart(2, '0')} ${periodDate.getHours().toString().padStart(2, '0')}:${periodDate.getMinutes().toString().padStart(2, '0')}:59`;
+      if (!period) {
+        formattedDateTime = ''
+      }
+      $('#period').text(formattedDateTime);
+      $('.form-right').hide()
+      $('.result-right').show()
+    }
+
+    function getSeconds () {
+      // 随机生成一个大于0小于60的数字
+      let second = Math.floor(Math.random() * 60)
+      if (second < 10) {
+        second = '0' + second
+      }
+      return second
+    }
+    function gethms (hours, minutes, addMinutes) {
+      let second = getSeconds()
+      let newMinutes = minutes + addMinutes;
+      let newHours = hours;
+      if (newMinutes >= 60) {
+        newHours++;
+        newMinutes = newMinutes - 60;
+      }
+      if (newHours < 10) {
+        newHours = '0' + newHours
+      }
+      if (newMinutes < 10) {
+        newMinutes = '0' + newMinutes
+      }
+      return newHours + ':' + newMinutes + ':' + second;
+    }
+
+    $('#back').click(function () {
+      $('.form-right').show()
+      $('.result-right').hide()
+    })
+
+    $('#screenshot').click(function () {
+      downloadImg()
+    })
+
+    function downloadImg () {
+      html2canvas(document.getElementById('result-content'), {
+        allowTaint: true,
+        useCORS: true,
+      }).then(canvas => {
+        let oImg = new Image();
+        oImg = canvas.toDataURL('image/png');
+        var oA = document.createElement("a");
+        oA.download = +new Date() + '.png';
+        oA.href = oImg;
+        document.body.appendChild(oA);
+        oA.click();
+        oA.remove();
+      });
+    }
+
+  </script>
+
+</body>
+
+
+</html>
